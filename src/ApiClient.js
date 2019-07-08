@@ -35,6 +35,8 @@
      * @default https://instance_name.looker.com:19999/api/3.0
      */
     this._basePath = 'https://INSTANCE_NAME.looker.com:19999/api/3.0'.replace(/\/+$/, '');
+    this._basePathonPrem = 'https://INSTANCE_NAME/api/3.0'.replace(/\/+$/, '');
+
     this.basePath =  this._basePath;
 
     /**
@@ -63,6 +65,9 @@
     this.basePath = this._basePath.replace('INSTANCE_NAME',name);
   }
 
+  exports.prototype.setOnPremInstanceName = function(name){
+    this.basePath = this._basePathonPrem.replace('INSTANCE_NAME',name);
+  }
   /**
    * Returns a string representation for an actual parameter.
    * @param param The actual parameter.
